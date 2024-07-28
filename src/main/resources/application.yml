@@ -1,0 +1,18 @@
+spring:
+  rabbitmq:
+    host: 172.17.0.2
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      bindings:
+        #source
+        publishMessage-out-0:
+          destination: publish-topic
+        #sink
+        consumer-in-0:
+          destination: publish-topic
+          group: consumer
+
+
